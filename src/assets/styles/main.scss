@@ -1,0 +1,69 @@
+@import "variables";
+
+$minWidth: 320;
+
+// Ширина полотна (макета)
+$maxWidth: 1920;
+
+// Ширина ограничивающего контейнера (0 = нет ограничения)
+$maxWidthContainer: 1340;
+
+// Общий отступ у контейнера
+// (30 = по 15px слева и справа, 0 = нет отступа)
+$containerPadding: 30;
+
+// Ширина срабатывания первого брейкпоинта
+$containerWidth: $maxWidthContainer + $containerPadding;
+
+// Брейк-поинты
+$pc: $containerWidth; // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$laptop: 1366.98;
+$tablet: 991.98; // Планшеты, некоторые телефоны в горизонтальном положении
+$mobile: 767.98; // Телефоны L
+$mobileSmall: 479.98; // Телефоны S
+
+* {
+    font-family: 'Inter';
+}
+
+.container {
+    width: 1266px;
+    margin: 0 auto;
+
+    @media screen and (max-width: $laptop + px) {
+        width: 1140px;
+    }
+
+    @media screen and (max-width: $tablet + px) {
+        width: 960px;
+    }
+
+    @media screen and (max-width: $mobile + px) {
+        width: 720px;
+    }
+
+    @media screen and (max-width: $mobileSmall + px) {
+        width: 95%;
+    }
+}
+button {
+    cursor: pointer;
+    padding: 7px 12px;
+    background: transparent;
+    border: 1px solid grey;
+    border-radius: 5px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+input {
+    padding: 9px 12px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+}
